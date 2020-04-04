@@ -8,6 +8,7 @@
         class="form-control"
         id="exampleInputEmail1"
         [(ngModel)]="employee.documento"
+        [ngModelOptions]="{ standalone: true }"
         aria-describedby="emailHelp"
         placeholder="documento"
       />
@@ -20,6 +21,7 @@
         class="form-control"
         id="exampleInputEmail1"
         [(ngModel)]="employee.nombre_completo"
+        [ngModelOptions]="{ standalone: true }"
         aria-describedby="emailHelp"
         placeholder="nombre completo"
       />
@@ -38,6 +40,7 @@
           type="date"
           value="2011-08-19"
           [(ngModel)]="employee.f_inicio"
+          [ngModelOptions]="{ standalone: true }"
           id="example-date-input"
         />
       </div>
@@ -49,7 +52,8 @@
       >
       <div class="col-10">
         <input
-          [(ngModel)]="employee.f_inicio"
+          [(ngModel)]="employee.f_fin"
+          [ngModelOptions]="{ standalone: true }"
           class="form-control"
           type="date"
           value="2011-08-19"
@@ -65,6 +69,7 @@
       <div class="col-10">
         <input
           [(ngModel)]="employee.h_inicio_turno"
+          [ngModelOptions]="{ standalone: true }"
           class="form-control"
           type="time"
           value="13:45:00"
@@ -80,6 +85,7 @@
       <div class="col-10">
         <input
           [(ngModel)]="employee.h_fin_turno"
+          [ngModelOptions]="{ standalone: true }"
           class="form-control"
           type="time"
           value="13:45:00"
@@ -95,6 +101,7 @@
       <div class="col-10">
         <input
           [(ngModel)]="employee.h_inicio_he"
+          [ngModelOptions]="{ standalone: true }"
           class="form-control"
           type="time"
           value="13:45:00"
@@ -110,6 +117,7 @@
       <div class="col-10">
         <input
           [(ngModel)]="employee.h_fin_he"
+          [ngModelOptions]="{ standalone: true }"
           class="form-control"
           type="time"
           value="13:45:00"
@@ -121,6 +129,8 @@
     <div class="form-group">
       <label for="exampleInputEmail1">Motivo Hora Extra</label>
       <input
+        [(ngModel)]="employee.motivo_he"
+        [ngModelOptions]="{ standalone: true }"
         type=""
         class="form-control"
         id="exampleInputEmail1"
@@ -134,3 +144,41 @@
     </button>
   </form>
 </div>
+
+<br />
+<br />
+<br />
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">documento</th>
+      <th scope="col">nombre completo</th>
+      <th scope="col">Fecha inicio</th>
+      <th scope="col">Fecha fin</th>
+      <th scope="col">Hora inicio turno</th>
+      <th scope="col">Hora fin hora extra</th>
+      <th scope="col">Hora fin hora extra</th>
+      <th scope="col">Motivo hora extra</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th *ngFor="let emp of employees" scope="row"></th>
+      <td>{{ employee.documento }}</td>
+      <td>{{ employee.nombre_completo }}</td>
+      <td>{{ employee.f_inicio }}</td>
+      <td>{{ employee.f_fin }}</td>
+      <td>{{ employee.h_fin_turno }}</td>
+      <td>{{ employee.h_inicio_he }}</td>
+      <td>{{ employee.h_fin_he }}</td>
+      <td>{{ employee.motivo_he }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<br />
+<br />
+<br />
+
+<button (click)="registrarPosts()">Posts</button>
