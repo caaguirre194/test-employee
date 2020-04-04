@@ -1,0 +1,136 @@
+<div id="form-employee">
+  <h1>Reportar Empleado</h1>
+  <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Documento</label>
+      <input
+        type=""
+        class="form-control"
+        id="exampleInputEmail1"
+        [(ngModel)]="employee.documento"
+        aria-describedby="emailHelp"
+        placeholder="documento"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Nombre completo</label>
+      <input
+        type=""
+        class="form-control"
+        id="exampleInputEmail1"
+        [(ngModel)]="employee.nombre_completo"
+        aria-describedby="emailHelp"
+        placeholder="nombre completo"
+      />
+      <small id="emailHelp" class="form-text text-muted"
+        >Ingresa tu nombre completo</small
+      >
+    </div>
+
+    <div class="form-group row">
+      <label for="example-date-input" class="col-2 col-form-label"
+        >Fecha inicio turno</label
+      >
+      <div class="col-10">
+        <input
+          class="form-control"
+          type="date"
+          value="2011-08-19"
+          [(ngModel)]="employee.f_inicio"
+          id="example-date-input"
+        />
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="example-date-input" class="col-2 col-form-label"
+        >Fecha fin turno</label
+      >
+      <div class="col-10">
+        <input
+          [(ngModel)]="employee.f_inicio"
+          class="form-control"
+          type="date"
+          value="2011-08-19"
+          id="example-date-input"
+        />
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="example-time-input" class="col-2 col-form-label"
+        >Hora inicio turno</label
+      >
+      <div class="col-10">
+        <input
+          [(ngModel)]="employee.h_inicio_turno"
+          class="form-control"
+          type="time"
+          value="13:45:00"
+          id="example-time-input"
+        />
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="example-time-input" class="col-2 col-form-label"
+        >Hora fin turno</label
+      >
+      <div class="col-10">
+        <input
+          [(ngModel)]="employee.h_fin_turno"
+          class="form-control"
+          type="time"
+          value="13:45:00"
+          id="example-time-input"
+        />
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="example-time-input" class="col-2 col-form-label"
+        >Hora inicio horas extra</label
+      >
+      <div class="col-10">
+        <input
+          [(ngModel)]="employee.h_inicio_he"
+          class="form-control"
+          type="time"
+          value="13:45:00"
+          id="example-time-input"
+        />
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="example-time-input" class="col-2 col-form-label"
+        >Hora fin horas extra</label
+      >
+      <div class="col-10">
+        <input
+          [(ngModel)]="employee.h_fin_he"
+          class="form-control"
+          type="time"
+          value="13:45:00"
+          id="example-time-input"
+        />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Motivo Hora Extra</label>
+      <input
+        type=""
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Motivo Hora Extra"
+      />
+    </div>
+
+    <button type="submit" (click)="guardarEmpleado()" class="btn btn-primary">
+      Enviar
+    </button>
+  </form>
+</div>
