@@ -1,6 +1,13 @@
 #form-employee,
-.table {
+.table,
+#btnPosts {
   width: 50%;
   margin-left: 10em;
   margin-top: 5em;
+}
+
+#btnPosts {
+  padding: 2em;
+  margin-left: auto;
+  margin-right: auto;
 }

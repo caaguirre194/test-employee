@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Employee } from '../../../server/models/employee';
+import { Post } from '../models/post';
 
 @Injectable({
   providedIn: 'root',
@@ -17,5 +18,9 @@ export class DatabaseService {
 
   postEmployee(employee: Employee) {
     return this.http.post(this.URL_API, employee);
+  }
+
+  postPosts(post: Post) {
+    return this.http.post(this.URL_API, post);
   }
 }
