@@ -28,7 +28,15 @@ db.employees.insert({
 9. Motivo hora extra 
 */
 
-use test-posts
+/*
+Para probar los servicios de almacenar empleados y usuarios se debe tener 
+en la base de datos de mongo una base de datos llamada test-posts
+
+*/
+
+
+
+use test-employees
 db.createCollection("employees");
 
 
