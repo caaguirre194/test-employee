@@ -1,5 +1,11 @@
 //  REPOSITORIO --> https://github.com/caaguirre194/test-employee
 
+/*
+Para probar los servicios de almacenar empleados y usuarios se debe tener 
+en la base de datos de mongo una base de datos llamada test-posts
+
+*/
+
 
 use test-employee
 db.createCollection("employees");
@@ -28,11 +34,7 @@ db.employees.insert({
 9. Motivo hora extra 
 */
 
-/*
-Para probar los servicios de almacenar empleados y usuarios se debe tener 
-en la base de datos de mongo una base de datos llamada test-posts
 
-*/
 
 
 
