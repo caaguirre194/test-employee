@@ -140,7 +140,10 @@
     </div>
 
     <button type="submit" (click)="guardarEmpleado()" class="btn btn-primary">
-      Enviar
+      Reportar
+    </button>
+    <button type="submit" (click)="guardarEnBD()" class="btn btn-primary">
+      Guardar en BD
     </button>
   </form>
 </div>
@@ -148,6 +151,8 @@
 <br />
 <br />
 <br />
+
+<h1>Empleados Reportados</h1>
 
 <table class="table">
   <thead>
@@ -163,16 +168,15 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th *ngFor="let emp of employees" scope="row"></th>
-      <td>{{ employee.documento }}</td>
-      <td>{{ employee.nombre_completo }}</td>
-      <td>{{ employee.f_inicio }}</td>
-      <td>{{ employee.f_fin }}</td>
-      <td>{{ employee.h_fin_turno }}</td>
-      <td>{{ employee.h_inicio_he }}</td>
-      <td>{{ employee.h_fin_he }}</td>
-      <td>{{ employee.motivo_he }}</td>
+    <tr *ngFor="let hero of employees; let i = index">
+      <td>{{ hero.documento }}</td>
+      <td>{{ hero.nombre_completo }}</td>
+      <td>{{ hero.f_inicio }}</td>
+      <td>{{ hero.f_fin }}</td>
+      <td>{{ hero.h_fin_turno }}</td>
+      <td>{{ hero.h_inicio_he }}</td>
+      <td>{{ hero.h_fin_he }}</td>
+      <td>{{ hero.motivo_he }}</td>
     </tr>
   </tbody>
 </table>
@@ -180,6 +184,8 @@
 <br />
 <br />
 <br />
+
+<h1>Posts de API</h1>
 
 <table class="table">
   <thead>
@@ -191,13 +197,21 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
+    <tr *ngFor="let hero of posts; let i = index">
+      <td>{{ hero.userId }}</td>
+      <td>{{ hero.id }}</td>
+      <td>{{ hero.title }}</td>
+      <td>{{ hero.body }}</td>
+    </tr>
+
+    <!--<tr>
       <th *ngFor="let post of posts" scope="row"></th>
       <!-- <td>{{ post.userId }}</td>
       <td>{{ post.id }}</td>
       <td>{{ post.title }}</td>
-      <td>{{ post.body }}</td>  -->
-    </tr>
+      <td>{{ post.body }}</td>  
+      <td>{{ posts }}</td>
+    </tr> -->
   </tbody>
 </table>
 

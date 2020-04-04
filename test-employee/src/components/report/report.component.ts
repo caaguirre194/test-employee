@@ -17,6 +17,7 @@ export class ReportComponent implements OnInit {
     this.employee = new Employee('', '', '', '', '', '', '', '');
     this.posts = [];
     this.employees = [];
+    this.getPosts();
   }
 
   ngOnInit(): void {
@@ -24,14 +25,20 @@ export class ReportComponent implements OnInit {
   }
 
   guardarEmpleado() {
-    //this.database.postEmployee(this.employee).subscribe((res) => {});
     this.employees.push(this.employee);
     this.employee = new Employee('', '', '', '', '', '', '', '');
+  }
+
+  guardarEnBD() {
+    this.database.postEmployee(this.employee).subscribe((res) => {
+      console.log(res);
+    });
   }
 
   getPosts() {
     this.api.getPosts().subscribe((res) => {
       this.posts = res as Post[];
+      console.log(res);
     });
   }
 
