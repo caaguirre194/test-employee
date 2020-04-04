@@ -11,9 +11,12 @@ import { Post } from '../../models/post';
 export class ReportComponent implements OnInit {
   employee: Employee;
   employees: Employee[];
+  posts: Post[];
 
   constructor(private database: DatabaseService, private api: ApiTestService) {
     this.employee = new Employee('', '', '', '', '', '', '', '');
+    this.posts = [];
+    this.employees = [];
   }
 
   ngOnInit(): void {
@@ -23,19 +26,18 @@ export class ReportComponent implements OnInit {
   guardarEmpleado() {
     //this.database.postEmployee(this.employee).subscribe((res) => {});
     this.employees.push(this.employee);
-
     this.employee = new Employee('', '', '', '', '', '', '', '');
-    console.log(this.employees);
-    for (let emp of this.employees) {
-      console.log(emp.documento);
-    }
+  }
+
+  getPosts() {
+    this.api.getPosts().subscribe((res) => {
+      this.posts = res as Post[];
+    });
   }
 
   registrarPosts() {
-    const lista = this.api.getPosts();
-    console.log(lista);
-    for (const post of lista) {
-      this.database.postPosts(post);
-    }
+    console.log(this.posts);
+    // se agrega primer post traido del API
+    this.database.postPosts(this.posts[0]);
   }
 }

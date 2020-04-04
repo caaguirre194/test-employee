@@ -181,6 +181,28 @@
 <br />
 <br />
 
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">userId</th>
+      <th scope="col">id</th>
+      <th scope="col">title</th>
+      <th scope="col">body</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th *ngFor="let post of posts" scope="row"></th>
+      <!-- <td>{{ post.userId }}</td>
+      <td>{{ post.id }}</td>
+      <td>{{ post.title }}</td>
+      <td>{{ post.body }}</td>  -->
+    </tr>
+  </tbody>
+</table>
+
+<br /><br />
+
 <div id="btnPosts">
   <button class="btn btn-primary" (click)="registrarPosts()">
     Guardar Posts de API
